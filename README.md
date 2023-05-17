@@ -49,10 +49,14 @@ After grouping the dataset, we looked more closely at the column “order_status
 The following step involved carrying out exploratory analysis on the grouped dataset. We started by analyzing the numerical variables by computing the correlation. It is important to highlight that the variable _“price”_ and the variable _“payment_value”_ have a high correlation of 0.90. This is explained by the fact that the payment value represents the transaction value and therefore, most of the time, it results to be the sum of the _"price"_ and the _"freight value"_. However, there are specific cases in which the payment value was less than the total price of the order (price + freight value).  This pattern was caused by the use of vouchers as a method of payment which covers a portion of the total price, lowering the _“payment value”_ column. No other significant correlations were displayed.
 For what concerns the distribution of the different numerical variables it is evident that the dataset is very imbalanced. A focus on the price distribution revealed that the distribution plot has a long right tail, with 50% of observations placed in between 0 and 100. Furthermore, there are several outliers with extreme high prices exceeding 1000. Notably, two orders stand out with values around 8000.
 
+  <img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/price_distribution.png" width="800" height="500" />
+
 The subsequent step involved analyzing the distribution of the categorical variables. As for the price, also the customer city distribution and the seller city distribution highlight important imbalances. Most of the customers' orders come from Sao Paulo, while the other customer cities, whose frequency is way smaller, are mostly located near the south-east coast of Brazil. For what concerns the seller city distribution, a similar pattern is displayed. Three main insights about the city distribution of customers and sellers must be pointed out: 
 - In the northern regions there are few customers and very few sellers
 - In the central regions of Brazil there are few customers and zero sellers
 - The majority of both customers and sellers are located in the southern coastal region
+
+  <img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/customer_city_map.jpeg" width="450" height="500" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/seller_city_map.jpeg" width="450" height="500" />
 
 ### Data Preprocessing
 In this step, the focus was on creating an additional dataset with rows representing unique customers and with columns representing their _“Recency”_, the _“Frequency”_ and the _“Monetary_value”_.
