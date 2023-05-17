@@ -59,7 +59,7 @@ The subsequent step involved analyzing the distribution of the categorical varia
 - In the central regions of Brazil there are few customers and zero sellers
 - The majority of both customers and sellers are located in the southern coastal region
 
-  <img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/customer_city_map.jpeg" width="400" height="500" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/seller_city_map.jpeg" width="400" height="500" />
+  <img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/customer_city_map.jpeg" width="380" height="400" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/seller_city_map.jpeg" width="380" height="400" />
 
 ### Data Preprocessing
 In this step, the focus was on creating an additional dataset with rows representing unique customers and with columns representing their _“Recency”_, the _“Frequency”_ and the _“Monetary_value”_.
