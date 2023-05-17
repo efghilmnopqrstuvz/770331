@@ -33,6 +33,9 @@ Presented below the explanation of each of the 26 variables of the dataset:
 - seller_city: seller city name .
 - seller_state: seller state.
 
+## Methods Section Overview
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/First Flow chart.svg" width="800" height="500" />
+
 ### Data preparation and cleaning
 Starting with data preparation, an initial stage entailed ensuring the absence of missing values, which revealed to be zero; secondly, identifying and eliminating 83 duplicated observations; and lastly, verifying the variable types. In the final step, the date variables were converted from an object type to datetime, facilitating subsequent analysis.
 Following that, the dataset underwent a detailed analysis, which proved to be a fundamental step in our project, enabling a thorough understanding of the significance of each individual observation. At a first look, the dataset’s rows might represent unique orders. However, it became quickly evident that each row of the dataset represents an item of a  cart, implying that a unique order would comprise a specific number of rows representing the different items in that specific cart. For sake of clarity and simplicity, a compressed subset of the original dataset was created so that each row would represent a unique order. This grouped dataset was then used for Exploratory Data Analysis. 
