@@ -99,18 +99,19 @@ The third approach in this iterative process involved the application of a new c
 By analyzing the performance metrics of these three methods, it is evident how the best clustering method remains the K-means ++,  which achieves better performance for both Silhouette Score and WCSS. 
 
 As a fourth approach, a density-based clustering method, namely DBSCAN, was incorporated into the analysis.  In order to achieve high quality clusters, an algorithm evaluating the Silhouette score of all the combinations of lambda from 1 to 30 and of epsilon from 1 to 20 was implemented. Then, the combination of parameters yielding the highest  Silhouette score was used. The results, however, were not optimal since the DBSCAN algorithm partitioned the data points into three different clusters, each one containing the points corresponding to the 3 different values of the frequency. 
-
-***** mettere foto del DBSCAN
-
 Consequently, DBSCAN's applicability as a clustering method is limited in scope as it relies solely on frequency-based density considerations. 
 
 #### Final process for clustering
 The final process adopted was influenced by one key insight detected in the previous sections. Through Exploratory Data Analysis, it became apparent that the distribution of data points was not balanced. The presence of anomalies, exhibiting extreme values,  had a severe impact on the assignment of the centroids with the K-means, causing them to deviate from the optimal position and leading to a decreased accuracy. To address this challenge, the first step involved identifying the anomalies present in the dataset. It was evident that  the DBSCAN algorithm, while unsuitable for clustering purposes, could serve as a valuable tool for anomaly detection; therefore it was applied to the data. For this purpose it was evaluated once again the highest silhouette returned by an algorithm changing the values of epsilon and lambda. In this case though, the range of values of the two parameters were restricted in order to detect more significant anomalies. 
 The DBSCAN algorithm identified a total of 43 anomalies within the dataset. These anomalies were subsequently removed from the original dataset and placed into a separate dataset for further analysis.
 
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/dbscan_out.png" width="400" height="400" />
+
 Then, K-means++, which was the clustering method with highest silhouette score in the previous analyses, was implemented for the dataset without anomalies and the dataset with only anomalies. Using the Elbow method and the Silhouette score, the optimal number of clusters for both dataset was chosen. 
 
-*Elbow method images for both models*
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/wcss_with.png" width="450" height="400" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/sil_with.png" width="450" height="400" />
+
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/wcss_without.png" width="450" height="400" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/sil_without.png" width="450" height="400" />
 
 As It is possible to visualize from the plots above, the best number of clusters for the main dataset is 4, while for the anomaly dataset, the Elbow method shows 5 optimal clusters. After the application of the K-Means++ the Silhouette scores were respectively 0.549 and 0.772. The last step of the analysis was to merge back together all the observations and their corresponding segments, resulting in 9 different clusters: 4 of them representing the “pillars” cluster and 5 of them representing the “anomaly” clusters. The clustering with 9 different segments presented a Silhouette Score of 0.545. In this regard it is important to highlight that when considering the entire data points, the best silhouette score totalized was 0.550 for 4 clusters. By partitioning the dataset in two, applying k-means separately and merging the results together, a very similar Silhouette score was achieved with the fundamental difference that now the dataset is segmented in 9 clusters and not anymore in 4.
 
