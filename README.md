@@ -33,8 +33,8 @@ Presented below the explanation of each of the 26 variables of the dataset:
 - seller_city: seller city name .
 - seller_state: seller state.
 
-## Methods Section Overview
-<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/First Flow chart.svg" width="800" height="500" />
+### Methods Section Overview
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/flowchart/methods.svg" width="800" height="500" />
 
 ### Data preparation and cleaning
 Starting with data preparation, an initial stage entailed ensuring the absence of missing values, which revealed to be zero; secondly, identifying and eliminating 83 duplicated observations; and lastly, verifying the variable types. In the final step, the date variables were converted from an object type to datetime, facilitating subsequent analysis.
@@ -59,7 +59,7 @@ The subsequent step involved analyzing the distribution of the categorical varia
 - In the central regions of Brazil there are few customers and zero sellers
 - The majority of both customers and sellers are located in the southern coastal region
 
-  <img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/customer_city_map.jpeg" width="450" height="500" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/seller_city_map.jpeg" width="450" height="500" />
+  <img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/customer_city_map.jpeg" width="400" height="500" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/seller_city_map.jpeg" width="400" height="500" />
 
 ### Data Preprocessing
 In this step, the focus was on creating an additional dataset with rows representing unique customers and with columns representing their _“Recency”_, the _“Frequency”_ and the _“Monetary_value”_.
@@ -93,6 +93,9 @@ In this section, a description of all the implemented models will be presented. 
 
 ### Models
 #### Experimentation process
+
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/flowchart/experimental_design.svg" width="800" height="500" />
+
 The first step involved applying a baseline model: the K-Means clustering technique. As previously stated, when applying K-Means clustering, the optimal number of clusters must be predefined beforehand. This was done by implementing both the Elbow method and the Silhouette. The results of the two metrics did not clearly converge on the same number of clusters. However, it was chosen 3 because it was the number scoring the highest silhouette, 0.500, and 3 was also a suboptimal value for WCSS. 
 
 As a second step, the K-Means++ was applied, trying to understand whether the solution reached by K-means was just a local optimum. With the K-Means++ there is a greater convergence between the Elbow method and the Silhouette score. The elbow method, in fact, pointed to 5 as the second best number of clusters and the silhouette showed 5 as the best score (0.550).
@@ -105,6 +108,9 @@ As a fourth approach, a density-based clustering method, namely DBSCAN, was inco
 Consequently, DBSCAN's applicability as a clustering method is limited in scope as it relies solely on frequency-based density considerations. 
 
 #### Final process for clustering
+
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/flowchart/final_process.svg" width="800" height="500" />
+
 The final process adopted was influenced by one key insight detected in the previous sections. Through Exploratory Data Analysis, it became apparent that the distribution of data points was not balanced. The presence of anomalies, exhibiting extreme values,  had a severe impact on the assignment of the centroids with the K-means, causing them to deviate from the optimal position and leading to a decreased accuracy. To address this challenge, the first step involved identifying the anomalies present in the dataset. It was evident that  the DBSCAN algorithm, while unsuitable for clustering purposes, could serve as a valuable tool for anomaly detection; therefore it was applied to the data. For this purpose it was evaluated once again the highest silhouette returned by an algorithm changing the values of epsilon and lambda. In this case though, the range of values of the two parameters were restricted in order to detect more significant anomalies. 
 The DBSCAN algorithm identified a total of 43 anomalies within the dataset. These anomalies were subsequently removed from the original dataset and placed into a separate dataset for further analysis.
 
@@ -112,9 +118,9 @@ The DBSCAN algorithm identified a total of 43 anomalies within the dataset. Thes
 
 Then, K-means++, which was the clustering method with highest silhouette score in the previous analyses, was implemented for the dataset without anomalies and the dataset with only anomalies. Using the Elbow method and the Silhouette score, the optimal number of clusters for both dataset was chosen. 
 
-<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/wcss_with.png" width="450" height="400" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/sil_with.png" width="450" height="400" />
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/wcss_with.png" width="400" height="400" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/sil_with.png" width="400" height="400" />
 
-<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/wcss_without.png" width="450" height="400" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/sil_without.png" width="450" height="400" />
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/wcss_without.png" width="400" height="400" /><img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/sil_without.png" width="400" height="400" />
 
 As It is possible to visualize from the plots above, the best number of clusters for the main dataset is 4, while for the anomaly dataset, the Elbow method shows 5 optimal clusters. After the application of the K-Means++ the Silhouette scores were respectively 0.549 and 0.772. The last step of the analysis was to merge back together all the observations and their corresponding segments, resulting in 9 different clusters: 4 of them representing the “pillars” cluster and 5 of them representing the “anomaly” clusters. The clustering with 9 different segments presented a Silhouette Score of 0.545. In this regard it is important to highlight that when considering the entire data points, the best silhouette score totalized was 0.550 for 4 clusters. By partitioning the dataset in two, applying k-means separately and merging the results together, a very similar Silhouette score was achieved with the fundamental difference that now the dataset is segmented in 9 clusters and not anymore in 4.
 
