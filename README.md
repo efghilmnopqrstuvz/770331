@@ -1,8 +1,8 @@
 # Machine Learning Project - Customer Segmentation
 Contributors:
-Emanuele Carosi 770331
-Matteo Antonazzo 760721
-Gaia Alberti 762671
+- Emanuele Carosi 770331
+- Matteo Antonazzo 760721
+- Gaia Alberti 762671
 
 ## Introduction
 The project addresses the need of a large corporation seeking to segment its customers in order to run targeted marketing campaigns. The aim is to extract valuable insights from distinct customer segments, enabling the creation of personalized and relevant marketing advertisements. By tailoring the ads to individual preferences and needs, the corporation seeks to enhance customer retention and foster loyalty. In order to accomplish this objective, a variety of clustering techniques were employed to identify the optimal number of segments. An analysis was, then, conducted on each individual cluster to acquire pertinent insights that could be leveraged for marketing purposes.
