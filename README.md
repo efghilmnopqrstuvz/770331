@@ -137,7 +137,7 @@ Consequently, while the nine clusters serve as a foundation for investigating an
 
 <img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/final_clusters.jpeg" width="400" height="400" />
 
-### CLUSTER 0 MAGENTA -  _‘Newcomers’_ 
+### CLUSTER 0 MAGENTA -  _"Newcomers"_ 
 The cluster _‘0’_ is composed of 5318 customers, representing 47,5% of the total. These users have made just one purchase in the last recent period, spending a small amount of money. The low monetary amount spent by the customers of this cluster is consistent with the average items bought per customer, which is on average 1. Regarding the type of items bought, this feature highlights the fact that this customer segment purchases standard and everyday items, with just some exceptions for watches gifts. It can be concluded that this customer segment represents the _“Newcomers”_: indicating their recent initiation into the customer journey. These individuals have made their first purchase, typically consisting of a single item of relatively low cost. Their initial purchase may have happened by chance or driven by a genuine interest in the product or brand. Irrespective of the specific circumstances surrounding their initial purchase, it is crucial for businesses to prioritize nurturing these newcomers and transforming them from one-time buyers into loyal customers. The marketing efforts should be focused on retaining the newcomers and not let them slip away since it is always cheaper to retain existing customers than acquiring new ones.
 
 ### CLUSTER 1 LIGHT BLUE - _“To Revive Customers”_ 
