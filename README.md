@@ -71,7 +71,7 @@ In this step, the focus was on creating an additional dataset with rows represen
 
 The _“Recency”_ variable represents the time elapsed since the last order in the dataset. The lower the value, the more recent the order is. In computing this variable we took as a point of reference the _“order_approved_at”_ variable.
 
-The _“Frequency”_ variable indicates the number of times a customer has made a purchase. It is fundamental to highlight that its distribution is highly imbalanced. In fact, 95% of the customers have purchased only one time, 4.9% has purchased two times and only 8 customers have purchased three times.
+The _“Frequency”_ variable indicates the number of times a customer has made a purchase. It is fundamental to highlight that its distribution is highly imbalanced. In fact, 98.76% of the customers have purchased only one time, 1.1% has purchased two times and only 8 customers have purchased three times.
 
 The _“Monetary_value”_ variable represents the total amount of money spent by a customer. Also here we can notice how the distribution is skewed to the right since it is a value obtained by summing the values of the highly skewed variable  _“price”_ of the grouped dataset corresponding to the same customer.
 
