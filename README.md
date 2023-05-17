@@ -1,4 +1,9 @@
 # Machine Learning Project - Customer Segmentation
+Contributors:
+Emanuele Carosi 770331
+Matteo Antonazzo 760721
+Gaia Alberti 762671
+
 ## Introduction
 The project addresses the need of a large corporation seeking to segment its customers in order to run targeted marketing campaigns. The aim is to extract valuable insights from distinct customer segments, enabling the creation of personalized and relevant marketing advertisements. By tailoring the ads to individual preferences and needs, the corporation seeks to enhance customer retention and foster loyalty. In order to accomplish this objective, a variety of clustering techniques were employed to identify the optimal number of segments. An analysis was, then, conducted on each individual cluster to acquire pertinent insights that could be leveraged for marketing purposes.
 The dataset consists of 26 variables encompassing information related to orders, customers, sellers, payments, products, and geolocation. However, only three variables were used for customer segmentation: **recency**, representing the time elapsed since a customer's last purchase; **frequency**, indicating the number of times a customer has made a purchase; and **monetary value**, representing the total amount of money spent by a customer.
@@ -168,6 +173,10 @@ Clusters 7 comprises 9 customers that have purchased twice from the company. The
 Cluster 8 is composed of only two customers that have made just one purchase but have spent a huge amount of money with an average of 7660 euros, the highest amount among all the clusters. This can be explained by the fact that these two customers have purchased on average 4 items that belong to very expensive categories like _“fixed_telephony”_. 
 Therefore, these two individuals epitomize a unique and highly valuable customer segment, characterized by their remarkable purchasing power. Attracting and retaining such customers is a difficult yet fruitful undertaking, given that their loyalty provide huge money inflow. Since it is a cluster of just two observations and since they display similar characteristics of the _“Potentially Profitable Customers”_ and  _“Elite customers”_, apart the magnitude of monetary value, the same targeting ads techniques could be applied to incentivize them to return and buy again from the shop. 
 To conclude it is important to note, that all these 9 clusters did not show any relevant patterns with regard to the distribution of the customer city and the type of payment that characterized each cluster. 
+
+### Cluster Centroids Overview
+
+<img src="https://github.com/efghilmnopqrstuvz/770331/blob/main/img_readme/cluster_rfm.png" width="800" height="800" />
 
 ## Conclusions
 In conclusion the final outcome was obtained in this way:
